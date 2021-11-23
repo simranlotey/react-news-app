@@ -1,0 +1,37 @@
+.navbar {
+  background-color: rgb(0 18 32);
+  font-size: 17px;
+}
+
+.card-body {
+  transition: 0.5s;
+}
+
+.card-body:hover {
+  background-color: rgb(5 40 66);
+}
+
+.container-fluid {
+  width: 93%;
+}
+
+.btn {
+  background-color: #46ff99;
+  color: black;
+}
+
+.btn:hover {
+  color: black;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+.nav-item {
+  margin-left: 11px;
+}
+
+.navbar-nav {
+  margin-left: 30px;
+}
