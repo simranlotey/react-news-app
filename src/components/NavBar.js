@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { navbarBrand } from '../config/api';
 
-function NavBar(props) {
+function NavBar() {
   return (
     <div>
       <nav className={`navbar py-3 fixed-top navbar-expand-lg navbar-dark`}>
         <Link className="navbar-brand" style={{ marginLeft: "20px" }} to="/">
-          News App
+          {navbarBrand}
         </Link>
         <button
           className="navbar-toggler"

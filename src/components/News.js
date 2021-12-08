@@ -4,6 +4,7 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Nullimage from "./Images/nullimage.png";
+import { API_DOMAIN, API_KEY } from "../config/api";
 import "../App.css";
 
 export class News extends Component {
@@ -31,7 +32,7 @@ export class News extends Component {
 
   updateNews = async () => {
     this.props.setProgress(15);
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2fc8e273d45c46b6a98545dcc96c74b3&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    let url = `${API_DOMAIN}${this.props.country}&category=${this.props.category}&apiKey=${API_KEY}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     this.props.setProgress(35);
@@ -55,7 +56,7 @@ export class News extends Component {
 
   fetchMoreData = async () => {
     this.setState({ page: this.state.page + 1 });
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=2fc8e273d45c46b6a98545dcc96c74b3&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `${API_DOMAIN}${this.props.country}&category=${this.props.category}&apiKey=${API_KEY}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
@@ -130,6 +131,7 @@ export default News;
 // import InfiniteScroll from "react-infinite-scroll-component";
 // import Nullimage from "./Images/nullimage.png";
 // import "../App.css";
+// import { API_DOMAIN, API_KEY } from "../config/api";
 
 // function News(props) {
 //   const [articles, setArticles] = useState([]);
@@ -145,7 +147,7 @@ export default News;
 
 //   const updateNews = async () => {
 //     props.setProgress(15);
-//     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2fc8e273d45c46b6a98545dcc96c74b3&page=${page}&pageSize=${props.pageSize}`;
+//     let url = `${API_DOMAIN}${props.country}&category=${props.category}&apiKey=${API_KEY}&page=${page}&pageSize=${props.pageSize}`;
 //     setLoading(true);
 //     let data = await fetch(url);
 //     props.setProgress(35);
@@ -163,7 +165,7 @@ export default News;
 //   }, []);
 
 //   const fetchMoreData = async () => {
-//     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2fc8e273d45c46b6a98545dcc96c74b3&page=${page+1}&pageSize=${props.pageSize}`;
+//     const url = `${API_DOMAIN}${props.country}&category=${props.category}&apiKey=${API_KEY}&page=${page + 1}&pageSize=${props.pageSize}`;
 //     setPage(page + 1);
 //     let data = await fetch(url);
 //     let parsedData = await data.json();
