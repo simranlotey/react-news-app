@@ -15,7 +15,7 @@ function NewsItem(props) {
             {props.description}
           </p>
           <details style={{ marginBottom: "15px" }}>
-            <summary>Details</summary>
+            <summary style={{ "color": "#f5f5f5", "fontSize": "15px" }}>Author, Channel and Date</summary>
             <p className="card-text" style={{ marginBottom: "-3px" }}>
               <small className="text-muted">
                 Author: {!props.author ? "Unknown" : props.author}
