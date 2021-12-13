@@ -5,7 +5,7 @@ function NewsItem(props) {
   return (
     <>
       <div
-        className="card"
+        className="card shadow"
         style={{ backgroundColor: "rgb(4 31 52)", color: "white" }}
       >
         <img className="card-img-top" src={props.imageUrl} alt={props.alt} />

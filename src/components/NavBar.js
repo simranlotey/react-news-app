@@ -6,7 +6,7 @@ import { navbarBrand } from '../config/api';
 function NavBar() {
   return (
     <div>
-      <nav className={`navbar py-3 fixed-top navbar-expand-lg navbar-dark`}>
+      <nav className={`navbar py-3 fixed-top navbar-expand-lg navbar-dark shadow`}>
         <Link className="navbar-brand" style={{ marginLeft: "20px" }} to="/">
           {navbarBrand}
         </Link>
