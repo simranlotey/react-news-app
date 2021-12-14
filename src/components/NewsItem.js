@@ -32,7 +32,7 @@ function NewsItem(props) {
           </details>
           <a
             href={props.urlNews}
-            className="btn"
+            className="btn shadow"
             rel="noreferrer"
             target="_blank"
           >
