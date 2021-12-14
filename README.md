@@ -1,6 +1,6 @@
 # React News App
 
-
+![](https://github.com/simranlotey/react-news-app/blob/master/src/components/Images/demo.png)
 ## Setup & Run
 
 Clone or download the repository.
