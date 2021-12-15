@@ -1,5 +1,8 @@
 # React News App
 
+## Review
+##   ↓↓
+
 ![](https://github.com/simranlotey/react-news-app/blob/master/src/components/Images/demo.png)
 ## Setup & Run
 
