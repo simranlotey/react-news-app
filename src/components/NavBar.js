@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
+import "../index.css";
 import { navbarBrand } from '../config/api';
 
 function NavBar() {
   return (
     <div>
       <nav className={`navbar py-3 fixed-top navbar-expand-lg navbar-dark shadow`}>
-        <Link className="navbar-brand" style={{ marginLeft: "20px" }} to="/">
+        <Link className="navbar-brand ml-4" to="/">
           {navbarBrand}
         </Link>
         <button

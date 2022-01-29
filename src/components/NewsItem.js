@@ -1,12 +1,12 @@
 import React from "react";
-import "../App.css";
+import "../index.css";
 
 function NewsItem(props) {
   return (
     <>
       <div
         className="card shadow"
-        style={{ backgroundColor: "rgb(4 31 52)", color: "white" }}
+        style={{ backgroundColor: "rgb(41, 47, 51)", color: "white" }}
       >
         <img className="card-img-top" src={props.imageUrl} alt={props.alt} />
         <div className="card-body">
@@ -32,11 +32,12 @@ function NewsItem(props) {
           </details>
           <a
             href={props.urlNews}
-            className="btn shadow"
+            className="btn text-white shadow"
+            style={{ borderRadius: "12px", fontWeight: "bold" }}
             rel="noreferrer"
             target="_blank"
           >
-            Read More
+            Read more →
           </a>
         </div>
       </div>

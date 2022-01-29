@@ -1,14 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans&family=Open+Sans&family=Signika+Negative:wght@600&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0a273f;
+  background-color: rgb(36, 39, 41);
+  font-family: "Inter", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.navbar {
+  background-color: rgb(41, 47, 51);
+  font-size: 17px;
+}
+
+.card {
+  transition: 0.1s;
+  border-radius: 15px;
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 30px 36px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.card-body {
+  transition: 0.3s;
+}
+
+.container-fluid {
+  width: 93%;
+}
+
+.btn {
+  background-color: #005abb;
+  color: black;
+}
+
+.btn:hover {
+  background-color: #005abb;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+.nav-item {
+  margin-left: 11px;
+}
+
+.navbar-nav {
+  margin-left: 30px;
 }
