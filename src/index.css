@@ -40,10 +40,6 @@ body {
   color: black;
 }
 
-.btn:hover {
-  background-color: #005abb;
-}
-
 .navbar-brand {
   font-size: 25px;
 }

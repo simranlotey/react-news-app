@@ -12,7 +12,7 @@ function App() {
     <>
       <Router>
         <NavBar />
-        <LoadingBar color="#0095a2" height={3} progress={progress} />
+        <LoadingBar color="#005abb" height={3} progress={progress} />
         <Routes>
           <Route
             exact

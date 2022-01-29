@@ -38,6 +38,18 @@ export class News extends Component {
     this.props.setProgress(35);
     let parsedData = await data.json();
     this.props.setProgress(70);
+    if (data.status === 200) {
+      console.log("OK. The request was executed successfully.")
+    }
+    else if (data.status === 429) {
+      console.error("Too Many Requests. You made too many requests within a window of time and have been rate limited. ")
+    }
+    else if (data.status === 401) {
+      console.error("Unauthorized. Your API key was missing from the request, or wasn't correct.")
+    }
+    else if (data.status === 500) {
+      console.error("Server Error. Something went wrong on our side.")
+    }
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
