@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import "../../components/newsitem/newsitem.css"
 
 function NewsItem(props) {
   return (

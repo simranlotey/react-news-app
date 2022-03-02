@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import NewsItem from "./NewsItem";
-import Spinner from "./Spinner";
+import NewsItem from "../newsitem/newsitem";
+import Spinner from "../spinner/spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Nullimage from "./Images/nullimage.png";
-import { API_DOMAIN, API_KEY } from "../config/api";
-import "../index.css";
+import Nullimage from "../../components/Images/nullimage.png";
+import { API_DOMAIN, API_KEY } from "../../config/api";
+import "../../components/news/news.css"
 
 export class News extends Component {
   static defaultProps = {

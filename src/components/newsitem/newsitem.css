@@ -1,0 +1,22 @@
+.card {
+  transition: 0.1s;
+  border-radius: 15px;
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 30px 36px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.card-body {
+  transition: 0.3s;
+}
+
+.btn {
+  background-color: #005abb;
+}

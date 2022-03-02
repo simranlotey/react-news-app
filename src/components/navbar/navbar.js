@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../index.css";
-import { navbarBrand } from '../config/api';
+import { navbarBrand } from '../../config/api';
+import "../../components/navbar/navbar.css"
 
 function NavBar() {
   return (
