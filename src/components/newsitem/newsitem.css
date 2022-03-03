@@ -1,6 +1,8 @@
 .card {
   transition: 0.1s;
   border-radius: 15px;
+  background-color: rgb(41, 47, 51);
+  color: #ffffff;
 }
 
 .card-img-top {
@@ -17,6 +19,17 @@
   transition: 0.3s;
 }
 
+.card-text {
+  color: #b6b4b4;
+}
+
+.summary {
+  color: #f5f5f5;
+  font-size: 15px;
+}
+
 .btn {
   background-color: #005abb;
+  border-radius: 12px;
+  font-weight: bold;
 }
