@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import NewsItem from "../newsitem/newsitem";
-import Spinner from "../spinner/spinner";
+import NewsItem from "../Newsitem/Newsitem";
+import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Nullimage from "../../components/Images/nullimage.png";
 import { endpointPath } from "../../config/api";
-import "../../components/news/news.css"
+import "./news.css"
 
 function News(props) {
   const [articles, setArticles] = useState([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { navbarBrand, navs } from '../../config/config';
-import "../../components/navbar/navbar.css"
+import "./navbar.css"
 
 function NavBar() {
   return (
