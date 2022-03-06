@@ -4,8 +4,29 @@ import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Nullimage from "../../components/Images/nullimage.png";
+import styled from "styled-components";
+import { Row, Col } from "react-bootstrap";
 import { endpointPath } from "../../config/api";
-import "./news.css"
+
+
+const Header = styled.h1`
+  text-align: center;
+  margin-top: 120px;
+  color: #fff;
+  margin-bottom: 20px;
+`
+
+const Container = styled.div`
+  width: 93%;
+  padding-right: (1.5rem, 0.75rem);
+  padding-left: (1.5rem, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+`
+const card = {
+  marginTop: "10px",
+  marginBottom: "50px"
+}
 
 function News(props) {
   const [articles, setArticles] = useState([]);
@@ -73,9 +94,9 @@ function News(props) {
 
   return (
     <>
-      <h1 className="text-center">
+      <Header>
         News - Top {capitaLize(props.category)} Headlines
-      </h1>
+      </Header>
       {loading && <Spinner />}
       <InfiniteScroll
         dataLength={articles.length}
@@ -83,12 +104,12 @@ function News(props) {
         hasMore={articles.length !== totalResults}
         loader={<Spinner />}
       >
-        <div className="container-fluid mt-4">
-          <div className="row">
+        <Container>
+          <Row>
             {articles.map((element) => {
               return (
-                <div
-                  className="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-3"
+                <Col
+                  sm={12} md={6} lg={4} xl={3} style={card}
                   key={element.url}
                 >
                   <NewsItem
@@ -106,11 +127,11 @@ function News(props) {
                     }
                     urlNews={element.url}
                   />
-                </div>
+                </Col>
               );
             })}
-          </div>
-        </div>
+          </Row>
+        </Container>
       </InfiniteScroll>
     </>
   );
@@ -140,14 +161,34 @@ export default News;
 
 /*
 import React, { Component } from "react";
-import NewsItem from "../newsitem/newsitem";
-import Spinner from "../spinner/spinner";
+import NewsItem from "../Newsitem/Newsitem";
+import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Nullimage from "../../components/Images/nullimage.png";
+import styled from "styled-components";
+import { Row, Col } from "react-bootstrap";
 import { endpointPath } from "../../config/api";
-import "../../components/news/news.css"
 
+
+const Header = styled.h1`
+  text-align: center;
+  margin-top: 120px;
+  color: #fff;
+  margin-bottom: 20px;
+`
+
+const Container = styled.div`
+  width: 93%;
+  padding-right: (1.5rem, 0.75rem);
+  padding-left: (1.5rem, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+`
+const card = {
+  marginTop: "10px",
+  marginBottom: "50px"
+}
 export class News extends Component {
   static defaultProps = {
     country: "us",
@@ -233,11 +274,11 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h1
+        <Header
           className="text-center"
         >
           News - Top {this.capitaLize(this.props.category)} Headlines
-        </h1>
+        </Header>
         {this.state.loading && <Spinner />}
         <InfiniteScroll
           dataLength={this.state.articles.length}
@@ -245,12 +286,12 @@ export class News extends Component {
           hasMore={this.state.articles.length !== this.state.totalResults}
           loader={<Spinner />}
         >
-          <div className="container-fluid mt-4">
-            <div className="row">
+          <Container>
+            <Row>
               {this.state.articles.map((element) => {
                 return (
-                  <div
-                    className="col-sm-12 col-md-6 col-lg-4 col-xl-3 my-3"
+                  <Col
+                    sm={12} md={6} lg={4} xl={3} style={card}
                     key={element.url}
                   >
                     <NewsItem
@@ -268,11 +309,11 @@ export class News extends Component {
                       }
                       urlNews={element.url}
                     />
-                  </div>
+                  </Col>
                 );
               })}
-            </div>
-          </div>
+            </Row>
+          </Container>
         </InfiniteScroll>
       </>
     );
@@ -280,4 +321,5 @@ export class News extends Component {
 }
 
 export default News;
+
 */

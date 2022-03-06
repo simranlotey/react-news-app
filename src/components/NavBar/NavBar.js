@@ -1,41 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { navbarBrand, navs } from '../../config/config';
-import "./navbar.css"
+import React from 'react'
+import { Navbar, Nav } from 'react-bootstrap'
+import { navbarBrand, navs } from '../../config/config'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { LinkContainer } from 'react-router-bootstrap'
+
+
+const navbar = {
+  backgroundColor: 'rgb(41, 47, 51)',
+  padding: "20px",
+  fontSize: "18px",
+};
+
+const navbrand = {
+  fontSize: "27px",
+  marginLeft: "20px"
+};
+
+const navnav = {
+  marginLeft: "14px"
+}
 
 function NavBar() {
   return (
-    <div>
-      <nav className={`navbar py-3 fixed-top navbar-expand-lg navbar-dark shadow`}>
-        <Link className="navbar-brand ml-4" to="/">
-          {navbarBrand}
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            {navs.map(navs =>
-              <li className="nav-item">
-                <Link className="nav-link" to={navs.page}>
-                  {navs.nav}
-                </Link>
-              </li>
-            )}
-          </ul>
-        </div>
-      </nav>
-    </div>
-  );
+    <Navbar style={navbar} variant="dark" expand="lg" fixed="top">
+      <Navbar.Brand style={navbrand} href="#home">{navbarBrand}</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav style={navnav} className="mr-auto">
+          {navs.map(navs =>
+            <LinkContainer to={navs.page}>
+              <Nav.Link className="ml-2">{navs.nav}</Nav.Link>
+            </LinkContainer>
+          )}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  )
 }
-
 export default NavBar;

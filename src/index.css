@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans&family=Open+Sans&family=Signika+Negative:wght@600&display=swap");
 body {
   margin: 0;
-  background-color: rgb(36, 39, 41);
+  /* background-color: rgb(36, 39, 41); */
   font-family: "Inter", sans-serif;
 }

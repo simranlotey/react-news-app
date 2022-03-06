@@ -8,7 +8,7 @@ import LoadingBar from "react-top-loading-bar";
 function App() {
   const [progress, setProgress] = useState(0);
   const pageSize = 7;
-
+  document.body.style.backgroundColor = "rgb(36, 39, 41)";
   return (
     <>
       <Router>
