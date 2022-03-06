@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NewsItem from "../Newsitem/Newsitem";
+import NewsItem from "../NewsItem/NewsItem";
 import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
