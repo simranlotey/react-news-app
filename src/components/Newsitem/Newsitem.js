@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Card } from 'react-bootstrap';
-
+import { author, summary, channel, lastUpdate } from "../../config/config"
 const card = {
   borderRadius: "15px",
   backgroundColor: "rgb(41, 47, 51)",
@@ -24,7 +24,7 @@ const detail = {
   marginBottom: "15px"
 }
 
-const summary = {
+const sum = {
   color: "#f5f5f5",
   fontSize: "15px"
 }
@@ -53,15 +53,15 @@ function NewsItem(props) {
             {props.description}
           </Card.Text>
           <details style={detail}>
-            <summary style={summary}>Author, Channel and Date</summary>
+            <summary style={sum}>{summary}</summary>
             <p style={text}>
-              Author: {!props.author ? "Unknown" : props.author}
+              {author(props.author)}
             </p>
             <p style={text}>
-              Channel: {props.channel}
+              {channel(props.channel)}
             </p>
             <p style={text}>
-              Last updated: {new Date(props.date).toGMTString()}
+              {lastUpdate(props.date)}
             </p>
           </details>
           <Button href={props.urlNews} target="_blank" style={btn}>Read more →</Button>

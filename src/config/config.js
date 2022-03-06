@@ -1,4 +1,5 @@
-export const navbarBrand = "News App"
+export const navbarBrand = "News App";
+export const header = (category) => `News - Top ${category} Headlines`;
 export const navs = [
     { nav: "Home", page: "/" },
     { nav: "General", page: "/general" },
@@ -20,3 +21,8 @@ export const router = [
     { path: "/entertainment", key: "entertainment", category: "entertainment", country: "us" },
     { path: "/technology", key: "technology", category: "technology", country: "us" }
 ]
+
+export const summary = "Author, Channel and Date";
+export const author = (author) => `Author: ${!author ? "Unknown" : author}`;
+export const channel = (channel) => `Channel: ${channel}`;
+export const lastUpdate = (date) => `Last updated: ${new Date(date).toGMTString()}`;

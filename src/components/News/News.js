@@ -7,6 +7,7 @@ import Nullimage from "../../components/Images/nullimage.png";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 import { endpointPath } from "../../config/api";
+import { header } from "../../config/config";
 
 
 const Header = styled.h1`
@@ -95,7 +96,7 @@ function News(props) {
   return (
     <>
       <Header>
-        News - Top {capitaLize(props.category)} Headlines
+        {header(capitaLize(props.category))}
       </Header>
       {loading && <Spinner />}
       <InfiniteScroll
@@ -169,6 +170,7 @@ import Nullimage from "../../components/Images/nullimage.png";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 import { endpointPath } from "../../config/api";
+import { header } from "../../config/config";
 
 
 const Header = styled.h1`
@@ -277,7 +279,7 @@ export class News extends Component {
         <Header
           className="text-center"
         >
-          News - Top {this.capitaLize(this.props.category)} Headlines
+          {header(this.capitaLize(this.props.category))}
         </Header>
         {this.state.loading && <Spinner />}
         <InfiniteScroll
@@ -321,5 +323,4 @@ export class News extends Component {
 }
 
 export default News;
-
 */
