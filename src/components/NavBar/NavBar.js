@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import { Navbar, Nav } from 'react-bootstrap'
 import { navbarBrand, navs } from '../../config/config'
 import { LinkContainer } from 'react-router-bootstrap'
@@ -27,7 +28,7 @@ function NavBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={nav} className="mr-auto">
           {navs.map(navs =>
-            <LinkContainer to={navs.page}>
+            <LinkContainer to={navs.page} key={uuidv4()}>
               <Nav.Link className="ml-2">{navs.nav}</Nav.Link>
             </LinkContainer>
           )}

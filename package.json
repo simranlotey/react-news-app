@@ -9,6 +9,8 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.26.1",
+    "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",
@@ -16,6 +18,7 @@
     "react-router-bootstrap": "^0.26.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.3",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -44,6 +47,9 @@
   },
   "devDependencies": {
     "@mui/material": "^5.1.1",
+    "eslint": "^2.13.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.29.4",
     "react-infinite-scroll-component": "^6.1.0",
     "react-router-dom": "^6.0.2",
     "react-top-loading-bar": "^2.1.0"
