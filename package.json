@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@mui/material": "^5.1.1",
-    "eslint": "^2.13.1",
+    "eslint": "^7.11.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.29.4",
     "react-infinite-scroll-component": "^6.1.0",

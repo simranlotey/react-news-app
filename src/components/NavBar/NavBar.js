@@ -1,24 +1,10 @@
-import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
-import { Navbar, Nav } from 'react-bootstrap'
-import { navbarBrand, navs } from '../../config/config'
-import { LinkContainer } from 'react-router-bootstrap'
+import React from "react"
+import { v4 as uuidv4 } from "uuid";
+import { navBar, navBrand, nav } from "./index";
+import { Navbar, Nav } from "react-bootstrap"
+import { navbarBrand, navs } from "../../config/config"
+import { LinkContainer } from "react-router-bootstrap"
 
-
-const navBar = {
-  backgroundColor: 'rgb(41, 47, 51)',
-  padding: "20px",
-  fontSize: "18px",
-};
-
-const navBrand = {
-  fontSize: "27px",
-  marginLeft: "20px"
-};
-
-const nav = {
-  marginLeft: "14px"
-}
 
 function NavBar() {
   return (

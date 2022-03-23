@@ -1,11 +1,6 @@
 import React from "react";
 import loading from "../../components/Images/loading.gif";
-import styles from "styled-components";
-
-const Center = styles.div`
-text-align: center;
-padding: 20px;
-`
+import { Center } from "./index";
 
 function Spinner() {
   return (

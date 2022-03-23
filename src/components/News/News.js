@@ -5,30 +5,11 @@ import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Nullimage from "../../components/Images/nullimage.png";
-import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
+import { Header, Container, card } from "./index";
 import { endpointPath } from "../../config/api";
 import { header } from "../../config/config";
 
-
-const Header = styled.h1`
-  text-align: center;
-  margin-top: 120px;
-  color: #fff;
-  margin-bottom: 20px;
-`
-
-const Container = styled.div`
-  width: 93%;
-  padding-right: (1.5rem, 0.75rem);
-  padding-left: (1.5rem, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
-`
-const card = {
-  marginTop: "10px",
-  marginBottom: "50px"
-}
 
 function News(props) {
   const [articles, setArticles] = useState([]);
@@ -89,7 +70,11 @@ function News(props) {
             {articles.map((element) => {
               return (
                 <Col
-                  sm={12} md={6} lg={4} xl={3} style={card}
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={3}
+                  style={card}
                   key={element.url}
                 >
                   <NewsItem

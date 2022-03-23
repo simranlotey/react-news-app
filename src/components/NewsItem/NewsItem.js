@@ -1,45 +1,7 @@
 import React from "react";
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card } from "react-bootstrap";
 import { author, summary, channel, lastUpdate } from "../../config/config"
-const card = {
-  borderRadius: "15px",
-  backgroundColor: "rgb(41, 47, 51)",
-  color: "#fff"
-}
-
-const img = {
-  borderTopLeftRadius: "15px",
-  borderTopRightRadius: "15px",
-}
-
-const btn = {
-  backgroundColor: "#005abb",
-  borderRadius: "12px",
-  fontWeight: "bold",
-  color: "#fff",
-  boxShadow: "0 30px 36px 0 rgba(0, 0, 0, 0.2)",
-}
-
-const detail = {
-  marginBottom: "15px"
-}
-
-const sum = {
-  color: "#f5f5f5",
-  fontSize: "15px"
-}
-
-const txt = {
-  color: "#b6b4b4",
-}
-
-const text = {
-  color: "#6c757d",
-  marginBottom: "3px",
-  marginTop: "4px",
-  fontSize: "12px",
-  opacity: 1
-}
+import { card, img, btn, detail, sum, txt, text } from "./index"
 
 
 function NewsItem(props) {
