@@ -1,32 +1,22 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { author, summary, channel, lastUpdate } from "../../config/config"
-import { card, img, btn, detail, sum, txt, text } from "./index"
+import Details from "./Details";
+import { card, img, btn, txt } from "./index"
 
 
 function NewsItem(props) {
+  const { imageUrl, alt, description, title, author, channel, date, urlNews } = props
   return (
     <>
       <Card style={card}>
-        <Card.Img style={img} variant="top" src={props.imageUrl} alt={props.alt} />
+        <Card.Img style={img} variant="top" src={imageUrl} alt={alt} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text style={txt}>
-            {props.description}
+            {description}
           </Card.Text>
-          <details style={detail}>
-            <summary style={sum}>{summary}</summary>
-            <p style={text}>
-              {author(props.author)}
-            </p>
-            <p style={text}>
-              {channel(props.channel)}
-            </p>
-            <p style={text}>
-              {lastUpdate(props.date)}
-            </p>
-          </details>
-          <Button href={props.urlNews} target="_blank" style={btn}>Read more →</Button>
+          <Details author={author} channel={channel} date={date} />
+          <Button href={urlNews} target="_blank" style={btn}>Read more →</Button>
         </Card.Body>
       </Card>
     </>
