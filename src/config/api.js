@@ -1,3 +1,5 @@
-export const API_DOMAIN = "https://newsapi.org/v2/top-headlines?country="
-export const API_KEY = "6517c7f12e7140328cc1277ec3ed050a"
-export const endpointPath = (country, category, page, pageSize) => `${API_DOMAIN}${country}&category=${category}&apiKey=${API_KEY}&page=${page}&pageSize=${pageSize}`;
+export const API_DOMAIN = "https://gnews.io/api/v4/top-headlines?country="
+export const API_KEY = "549ab5bf1867e07059b00a64060ed62d"
+export const endpointPath = (country, category) => `${API_DOMAIN}${country}&category=${category}&apikey=${API_KEY}`;
+
+// f2eb478b0cdb5909364e59fdc321344f

@@ -5,7 +5,7 @@ import { card, img, btn, txt } from "./index"
 
 
 function NewsItem(props) {
-  const { imageUrl, alt, description, title, author, channel, date, urlNews } = props
+  const { imageUrl, alt, description, title, channel, published, urlNews } = props
   return (
     <>
       <Card style={card}>
@@ -15,7 +15,7 @@ function NewsItem(props) {
           <Card.Text style={txt}>
             {description}
           </Card.Text>
-          <Details author={author} channel={channel} date={date} />
+          <Details channel={channel} published={published} />
           <Button href={urlNews} target="_blank" style={btn}>Read more →</Button>
         </Card.Body>
       </Card>
