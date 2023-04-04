@@ -4,7 +4,7 @@ import NewsItem from "../NewsItem/NewsItem";
 import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-import NullImage from "../../components/Images/nullimage.png";
+import Nullimage from "../../components/Images/nullimage.png";
 import { Row, Col } from "react-bootstrap";
 import { Header, Container, card } from "./index";
 import { endpointPath } from "../../config/api";
@@ -13,7 +13,9 @@ import { header } from "../../config/config";
 
 function News(props) {
   const [articles, setArticles] = useState([]);
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [totalResults, setTotalResults] = useState(0);
 
   const capitaLize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -24,11 +26,12 @@ function News(props) {
   const updatenews = async () => {
     try {
       props.setProgress(15);
-      const response = await axios.get(endpointPath(props.country, props.category));
+      const response = await axios.get(endpointPath(props.country, props.category, page, props.pageSize));
       setLoading(true);
       props.setProgress(70);
       const parsedData = response.data;
       setArticles(parsedData.articles);
+      setTotalResults(parsedData.totalResults);
       setLoading(false);
       props.setProgress(100);
     }
@@ -42,6 +45,13 @@ function News(props) {
     // eslint-disable-next-line
   }, []);
 
+  const fetchMoreData = async () => {
+    const response = await axios.get(endpointPath(props.country, props.category, page + 1, props.pageSize));
+    setPage(page + 1);
+    const parsedData = response.data;
+    setArticles(articles.concat(parsedData.articles));
+    setTotalResults(parsedData.totalResults);
+  };
 
   return (
     <>
@@ -51,6 +61,8 @@ function News(props) {
       {loading && <Spinner />}
       <InfiniteScroll
         dataLength={articles.length}
+        next={fetchMoreData}
+        hasMore={articles.length !== totalResults}
         loader={<Spinner />}
       >
         <Container>
@@ -68,14 +80,15 @@ function News(props) {
                   <NewsItem
                     title={element.title}
                     description={element.description}
-                    published={element.publishedAt}
+                    author={element.author}
+                    date={element.publishedAt}
                     channel={element.source.name}
-                    alt="Card image"
+                    alt="Card image cap"
                     publishedAt={element.publishedAt}
                     imageUrl={
-                      element.image === null
-                        ? NullImage
-                        : element.image
+                      element.urlToImage === null
+                        ? Nullimage
+                        : element.urlToImage
                     }
                     urlNews={element.url}
                   />
@@ -91,10 +104,12 @@ function News(props) {
 
 News.defaultProps = {
   country: "us",
+  pageSize: 7,
   category: "general",
 };
 News.propTypes = {
   country: PropTypes.string,
+  pageSize: PropTypes.number,
   category: PropTypes.string,
 };
 
