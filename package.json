@@ -1,16 +1,12 @@
 {
-  "name": "my-app",
+  "name": "news-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.26.1",
-    "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",
@@ -27,12 +23,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,10 +36,6 @@
     ]
   },
   "devDependencies": {
-    "@mui/material": "^5.1.1",
-    "eslint": "^7.11.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.29.4",
     "react-infinite-scroll-component": "^6.1.0",
     "react-router-dom": "^6.0.2",
     "react-top-loading-bar": "^2.1.0"
