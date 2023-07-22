@@ -9,10 +9,11 @@ import LoadingBar from "react-top-loading-bar";
 function App() {
   const [progress, setProgress] = useState(0);
   document.body.style.backgroundColor = "rgb(36, 39, 41)";
+  
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBar setProgress={setProgress}/>
         <LoadingBar color="#005abb" height={3} progress={progress} />
         <Routes>
           {

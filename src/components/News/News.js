@@ -5,54 +5,65 @@ import Spinner from "../Spinner/Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import NullImage from "../../components/Images/nullimage.png";
+import { v4 as uuidv4 } from "uuid";
 import { Row, Col } from "react-bootstrap";
 import { Header, Container, card } from "./index";
 import { endpointPath } from "../../config/api";
 import { header } from "../../config/config";
 
-
 function News(props) {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [totalArticles, setTotalArticle] = useState("");
 
   const capitaLize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  document.title = `${capitaLize(props.category)} - News App`;
+  const searchQuery = props.searchQuery;
+  const category = props.category;
+  const title = totalArticles === 0 ? "No Found" : searchQuery ? capitaLize(searchQuery) : capitaLize(category);
+  document.title = `${capitaLize(title)} - News App`;
 
   const updatenews = async () => {
     try {
       props.setProgress(15);
-      const response = await axios.get(endpointPath(props.country, props.category));
+      const response = await axios.get(
+        endpointPath(props.country, props.category)
+      );
       setLoading(true);
       props.setProgress(70);
       const parsedData = response.data;
       setArticles(parsedData.articles);
       setLoading(false);
       props.setProgress(100);
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    updatenews();
+    if (props.news) {
+      setArticles(props.news.articles);
+      setTotalArticle(props.news.totalArticles);
+      setLoading(false);
+    } else {
+      updatenews();
+    }
     // eslint-disable-next-line
-  }, []);
-
+  }, [props.news]);
 
   return (
     <>
       <Header>
-        {header(capitaLize(props.category))}
+        {totalArticles === 0
+          ? "No Found"
+          : header(
+              searchQuery ? capitaLize(searchQuery) : capitaLize(category)
+            )}
       </Header>
-      {loading && <Spinner />}
-      <InfiniteScroll
-        dataLength={articles.length}
-        loader={<Spinner />}
-      >
+      {props.loading || loading ? <Spinner /> : null}
+      <InfiniteScroll dataLength={articles.length} loader={<Spinner />}>
         <Container>
           <Row>
             {articles.map((element) => {
@@ -63,7 +74,7 @@ function News(props) {
                   lg={4}
                   xl={3}
                   style={card}
-                  key={element.url}
+                  key={uuidv4()}
                 >
                   <NewsItem
                     title={element.title}
@@ -73,9 +84,7 @@ function News(props) {
                     alt="Card image"
                     publishedAt={element.publishedAt}
                     imageUrl={
-                      element.image === null
-                        ? NullImage
-                        : element.image
+                      element.image === null ? NullImage : element.image
                     }
                     urlNews={element.url}
                   />
