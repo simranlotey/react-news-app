@@ -63,6 +63,8 @@ function NavBar(props) {
     setShowSearchResults(false);
   };
 
+  const isSearchButtonDisabled = searchQuery.trim() === "";
+
   return (
     <>
       <Navbar
@@ -83,9 +85,9 @@ function NavBar(props) {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={nav} className="mr-auto" onClick={handleNavClick}>
-            {navs.map((navs) => (
-              <LinkContainer to={navs.page} key={uuidv4()}>
-                <Nav.Link className="ml-2">{navs.nav}</Nav.Link>
+            {navs.map((navItem) => (
+              <LinkContainer to={navItem.page} key={uuidv4()}>
+                <Nav.Link className="ml-2">{navItem.nav}</Nav.Link>
               </LinkContainer>
             ))}
           </Nav>
@@ -102,6 +104,7 @@ function NavBar(props) {
               className="btn custom-btn mt-lg-2 ml-2 mt-md-2 mt-sm-2 mt-xl-0 shadow-sm"
               style={btnColor}
               onClick={handleSearch}
+              disabled={isSearchButtonDisabled}
             >
               Search
             </Button>
