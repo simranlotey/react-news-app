@@ -23,10 +23,6 @@ export const formInput = {
   marginLeft: "13px"
 };
 
-export const buttonBgm = {
-  backgroundColor: "ffffff80",
-};
-
 export const btnColor = {
   backgroundColor: "#005abb",
   color: "white",

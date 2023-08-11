@@ -11,56 +11,31 @@ import {
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import { navbarBrand, navs } from "../../config/config";
 import { LinkContainer } from "react-router-bootstrap";
-import { endpointSearch } from "../../config/api";
 import { useNavigate } from "react-router-dom";
-import News from "../News/News";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { searchArticle } from "../../state/action";
 
-function NavBar(props) {
+function NavBar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const navRef = useRef(null);
-
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchSearch, setSearchSearch] = useState("");
-  const [articles, setArticles] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [showSearchResults, setShowSearchResults] = useState(false);
 
-  const handleSearch = async () => {
-    try {
-      props.setProgress(15);
-      setIsCollapsed(true);
-      setLoading(true);
-      const response = await axios.get(endpointSearch(searchQuery));
-      props.setProgress(70);
-      setSearchSearch(searchQuery);
-      const result = response.data;
-      setArticles(result);
-      setSearchQuery("");
-      setShowSearchResults(true);
-      setLoading(false);
-      navigate("/search");
-      props.setProgress(100);
-    } catch (error) {
-      console.error(error);
-    }
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
-  const handleInputChange = (event) => {
-    event.preventDefault();
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "SEARCH_REQUEST" });
+    dispatch(searchArticle(searchQuery));
+    navigate("/search");
     setIsCollapsed(true);
-    handleSearch();
   };
 
   const handleNavClick = () => {
     setIsCollapsed(true);
-    setShowSearchResults(false);
   };
 
   const isSearchButtonDisabled = searchQuery.trim() === "";
@@ -103,7 +78,7 @@ function NavBar(props) {
             <Button
               className="btn custom-btn mt-lg-2 ml-2 mt-md-2 mt-sm-2 mt-xl-0 shadow-sm"
               style={btnColor}
-              onClick={handleSearch}
+              onClick={handleSubmit}
               disabled={isSearchButtonDisabled}
             >
               Search
@@ -111,9 +86,6 @@ function NavBar(props) {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-      {showSearchResults ? (
-        <News news={articles} searchQuery={searchSearch} loading={loading} />
-      ) : null}
     </>
   );
 }

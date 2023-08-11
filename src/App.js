@@ -1,38 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import NavBar from "./components/NavBar/NavBar";
 import News from "./components/News/News";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { router } from "./config/config";
-import LoadingBar from "react-top-loading-bar";
+import Search from "./components/Search/Search";
 
 function App() {
-  const [progress, setProgress] = useState(0);
-  document.body.style.backgroundColor = "rgb(36, 39, 41)";
-  
   return (
     <>
       <Router>
-        <NavBar setProgress={setProgress}/>
-        <LoadingBar color="#005abb" height={3} progress={progress} />
+        <NavBar />
         <Routes>
-          {
-            router.map(path =>
-              <Route
-                exact
-                key={uuidv4()}
-                path={path.path}
-                element={
-                  <News
-                    setProgress={setProgress}
-                    key={path.key}
-                    category={path.category}
-                    country={path.country}
-                  />
-                }
-              />
-            )
-          }
+          {router.map((path) => (
+            <Route
+              exact
+              key={uuidv4()}
+              path={path.path}
+              element={
+                <News
+                  key={path.key}
+                  newscategory={path.category}
+                  country={path.country}
+                />
+              }
+            />
+          ))}
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Router>
     </>

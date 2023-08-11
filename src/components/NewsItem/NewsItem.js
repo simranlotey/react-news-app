@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
-import Details from "./Details";
+import Details from "./Details/Details";
 import { card, img, btn, txt } from "./index";
 
 function NewsItem(props) {
@@ -22,5 +23,15 @@ function NewsItem(props) {
     </>
   );
 }
+
+NewsItem.propTypes = {
+  imageUrl: PropTypes.string,
+  alt: PropTypes.string,
+  description: PropTypes.string,
+  title: PropTypes.string,
+  channel: PropTypes.string,
+  published: PropTypes.string,
+  urlNews: PropTypes.string,
+};
 
 export default NewsItem;
