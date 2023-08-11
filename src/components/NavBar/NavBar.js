@@ -28,7 +28,6 @@ function NavBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "SEARCH_REQUEST" });
     dispatch(searchArticle(searchQuery));
     navigate("/search");
     setSearchQuery("");
