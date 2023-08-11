@@ -20,7 +20,7 @@ export const searchForm = {
 
 export const formInput = {
   borderRadius: "6px",
-  marginLeft: "13px"
+  marginLeft: "13px",
 };
 
 export const btnColor = {
@@ -31,5 +31,5 @@ export const btnColor = {
   padding: "8px 15px",
   borderColor: "#323762b7",
   fontSize: "20px",
-  marginRight: "10px"
+  marginRight: "10px",
 };

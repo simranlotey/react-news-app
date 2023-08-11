@@ -17,23 +17,6 @@ export const btn = {
   borderColor: "#323762b7",
 };
 
-export const detail = {
-  marginBottom: "15px",
-};
-
-export const sum = {
-  color: "#f5f5f5",
-  fontSize: "15px",
-};
-
-export const txt = {
-  color: "#b6b4b4",
-};
-
 export const text = {
-  color: "#6c757d",
-  marginBottom: "3px",
-  marginTop: "4px",
-  fontSize: "12px",
-  opacity: 1,
+  color: "#b6b4b4",
 };

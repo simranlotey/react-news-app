@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import searchArticle from "./searchArticle";
 
 const reducer = combineReducers({
-    search: searchArticle
-})
+  search: searchArticle,
+});
 
-export default reducer
+export default reducer;

@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { summary, newsChannel, lastUpdate } from "../../../config/config";
-import { detail, sum, text } from "../index";
+import { details, summarry, text } from "./index";
 
 function Details(props) {
   const { channel, published } = props;
   return (
-    <details style={detail}>
-      <summary style={sum}>{summary}</summary>
+    <details style={details}>
+      <summary style={summarry}>{summary}</summary>
       <p style={text}>{newsChannel(channel)}</p>
       <p style={text}>{lastUpdate(published)}</p>
     </details>

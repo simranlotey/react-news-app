@@ -31,6 +31,7 @@ function NavBar() {
     dispatch({ type: "SEARCH_REQUEST" });
     dispatch(searchArticle(searchQuery));
     navigate("/search");
+    setSearchQuery("");
     setIsCollapsed(true);
   };
 

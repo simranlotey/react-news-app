@@ -4,7 +4,7 @@ import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
 import NullImage from "../../components/Images/nullImage.png";
 import { Row, Col } from "react-bootstrap";
-import { Header, Container, card } from "../News/index";
+import { Header, Container, card } from "./index";
 import { header, noFound, searching } from "../../config/config";
 import { v4 as uuidv4 } from "uuid";
 
