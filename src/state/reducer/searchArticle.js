@@ -1,8 +1,4 @@
-import {
-  SEARCH_REQUEST,
-  SEARCH_SUCCESS,
-  SEARCH_FAILURE,
-} from "../action/actionTypes";
+import { SEARCH_REQUEST, SEARCH_SUCCESS, SEARCH_FAILURE } from "../action/actionTypes";
 
 const initialState = {
   articles: [],

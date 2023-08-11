@@ -1,13 +1,6 @@
 import React, { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import {
-  navBar,
-  navBrand,
-  nav,
-  searchForm,
-  btnColor,
-  formInput,
-} from "./index";
+import { navBar, navBrand, nav, searchForm, btnColor, formInput } from "./index";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import { navbarBrand, navs } from "../../config/config";
 import { LinkContainer } from "react-router-bootstrap";
