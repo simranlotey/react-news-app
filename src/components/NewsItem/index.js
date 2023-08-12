@@ -13,6 +13,7 @@ export const btn = {
   borderRadius: "6px",
   fontWeight: "bold",
   backgroundColor: "#005abb",
+  boxShadow: "0 .125rem .25rem rgba(0, 0, 0, 0.075)",
   color: "white",
   borderColor: "#323762b7",
 };
