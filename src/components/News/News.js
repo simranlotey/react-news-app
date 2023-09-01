@@ -77,19 +77,12 @@ function News(props) {
 
 News.defaultProps = {
   country: "us",
-  category: "general",
+  newscategory: "general",
 };
 
 News.propTypes = {
-  setProgress: PropTypes.func,
-  search: PropTypes.string,
   country: PropTypes.string,
   newscategory: PropTypes.string,
-  searchArticle: PropTypes.shape({
-    articles: PropTypes.array,
-    totalArticles: PropTypes.number,
-  }),
-  searchLoading: PropTypes.bool,
 };
 
 export default News;
