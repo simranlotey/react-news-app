@@ -6,12 +6,12 @@ const spinAnimation = keyframes`
 `;
 
 export const SpinnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
+  position: fixed;
+  top: 140px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
-
+  
 export const LoadingCircle = styled.div`
   width: 40px;
   height: 40px;
