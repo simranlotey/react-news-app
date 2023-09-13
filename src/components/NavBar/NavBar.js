@@ -6,7 +6,7 @@ import { navbarBrand, navs } from "../../config/config";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { searchArticle } from "../../state/action";
+import { searchArticle } from "../../store/action";
 
 function NavBar() {
   const navigate = useNavigate();
