@@ -1,12 +1,21 @@
 import React, { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { navBar, navBrand, nav, searchForm, btnColor, formInput } from "./index";
+import {
+  navBar,
+  navBrand,
+  nav,
+  searchForm,
+  btnColor,
+  formInput,
+  logo
+} from "./index";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import { navbarBrand, navs } from "../../config/config";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { searchArticle } from "../../store/action";
+import logoImage from "../Images/logoImage.png";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -45,6 +54,7 @@ function NavBar() {
         expanded={!isCollapsed}
       >
         <Navbar.Brand style={navBrand} href="/">
+          <img src={logoImage} alt="Logo" style={logo}/>
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle
