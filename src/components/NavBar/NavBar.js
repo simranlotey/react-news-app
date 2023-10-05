@@ -11,6 +11,7 @@ import { searchArticle } from "../../store/action";
 function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const navRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -22,7 +23,7 @@ function NavBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(searchArticle(searchQuery));
-    navigate("/search");
+    navigate(`/search/${searchQuery}`);
     setSearchQuery("");
     setIsCollapsed(true);
   };

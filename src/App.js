@@ -26,7 +26,7 @@ function App() {
               }
             />
           ))}
-          <Route path="/search" element={<Search />} />
+          <Route path="/search/:query" element={<Search />} />
         </Routes>
       </Router>
     </>
