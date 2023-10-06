@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import NewsItem from "../NewsItem/NewsItem";
-import Loading from "../Loading/Loading";
 import PropTypes from "prop-types";
-import NullImage from "../../components/Images/nullImage.png";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
-import { Row, Col } from "react-bootstrap";
-import { Header, Container, card } from "./index";
+import NullImage from "../../components/Images/nullImage.png";
 import { endpointPath } from "../../config/api";
 import { header } from "../../config/config";
+import Loading from "../Loading/Loading";
+import NewsItem from "../NewsItem/NewsItem";
+import { Container, Header, card } from "./index";
 
 function News(props) {
   const { newscategory, country } = props;

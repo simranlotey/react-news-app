@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from "uuid";
+import NullImage from "../../components/Images/nullImage.png";
+import { header, noFound, searching } from "../../config/config";
+import { searchArticle } from '../../store/action';
 import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
-import NullImage from "../../components/Images/nullImage.png";
-import { Row, Col } from "react-bootstrap";
-import { Header, Container, card } from "./index";
-import { header, noFound, searching } from "../../config/config";
-import { v4 as uuidv4 } from "uuid";
+import { Container, Header, card } from "./index";
 
 function Search() {
   const [searchQuery, setSearchQuery] = useState("");
   const [totalArticles, setTotalArticle] = useState(0);
-  const { articles, query, loading } = useSelector((state) => state.search);
+  const { articles, loading } = useSelector((state) => state.search);
+  const { query } = useParams();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchArticle(query));
+  }, [query, dispatch]);
 
   useEffect(() => {
     setSearchQuery(query);
@@ -40,7 +49,7 @@ function Search() {
           </Header>
           <Container>
             <Row>
-              {articles.articles.map((element) => {
+              {articles?.articles?.map((element) => {
                 return (
                   <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
                     <NewsItem
