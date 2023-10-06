@@ -1,25 +1,22 @@
-import React, { useState, useRef } from "react";
-import { v4 as uuidv4 } from "uuid";
-import {
-  navBar,
-  navBrand,
-  nav,
-  searchForm,
-  btnColor,
-  formInput,
-  logo
-} from "./index";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import { navbarBrand, navs } from "../../config/config";
+import React, { useRef, useState } from "react";
+import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { searchArticle } from "../../store/action";
+import { v4 as uuidv4 } from "uuid";
+import { navbarBrand, navs } from "../../config/config";
 import logoImage from "../Images/logoImage.png";
+import {
+  btnColor,
+  formInput,
+  logo,
+  nav,
+  navBar,
+  navBrand,
+  searchForm
+} from "./index";
 
 function NavBar() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const navRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,7 +28,6 @@ function NavBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(searchArticle(searchQuery));
     navigate(`/search/${searchQuery}`);
     setSearchQuery("");
     setIsCollapsed(true);
