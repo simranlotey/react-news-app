@@ -1,13 +1,13 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import { v4 as uuidv4 } from "uuid";
 import NullImage from "../../components/Images/nullImage.png";
-import { endpointPath } from "../../config/api";
-import { header } from "../../config/config";
 import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
+import { v4 as uuidv4 } from "uuid";
+import { Col, Row } from "react-bootstrap";
+import { header } from "../../config/config";
+import { endpointPath } from "../../config/api";
 import { Container, Header, card } from "./index";
 
 function News(props) {

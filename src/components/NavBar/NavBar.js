@@ -12,7 +12,7 @@ import {
   nav,
   navBar,
   navBrand,
-  searchForm
+  searchForm,
 } from "./index";
 
 function NavBar() {
@@ -50,7 +50,7 @@ function NavBar() {
         expanded={!isCollapsed}
       >
         <Navbar.Brand style={navBrand} href="/">
-          <img src={logoImage} alt="Logo" style={logo}/>
+          <img src={logoImage} alt="Logo" style={logo} />
           {navbarBrand}
         </Navbar.Brand>
         <Navbar.Toggle

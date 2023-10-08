@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from "uuid";
-import NullImage from "../../components/Images/nullImage.png";
-import { header, noFound, searching } from "../../config/config";
-import { searchArticle } from '../../store/action';
 import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
+import NullImage from "../../components/Images/nullImage.png";
+import { useDispatch, useSelector } from "react-redux";
+import { searchArticle } from "../../store/action";
+import { useParams } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
+import { header, noFound, searching } from "../../config/config";
 import { Container, Header, card } from "./index";
 
 function Search() {
