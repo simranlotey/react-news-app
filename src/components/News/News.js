@@ -21,7 +21,7 @@ function News(props) {
 
   const category = newscategory;
   const title = capitaLize(category);
-  document.title = `${capitaLize(title)} - News App`;
+  document.title = `${capitaLize(title)} - News`;
 
   const updatenews = async () => {
     try {

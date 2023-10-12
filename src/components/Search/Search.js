@@ -36,7 +36,7 @@ function Search() {
       ? noFound
       : loading
       ? searching
-      : `${capitaLize(searchQuery)} - News App`;
+      : `${capitaLize(searchQuery)} - News`;
 
   return (
     <>
