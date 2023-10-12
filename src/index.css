@@ -4,3 +4,11 @@ body {
   font-family: "Inter", sans-serif;
   background-color: rgb(36, 39, 41) !important;
 }
+
+::-webkit-scrollbar {
+  width: 3.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #464b50;
+}
