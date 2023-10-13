@@ -10,11 +10,11 @@ function NewsItem(props) {
 
   return (
     <>
-      <Card style={card}>
+      <Card style={card} >
         <Card.Img style={img} variant="top" src={imageUrl} alt={alt} />
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text style={text}>{description}</Card.Text>
+          <Card.Title>{title.split(' ').slice(0, 10).join(' ')}...</Card.Title>
+          <Card.Text style={text}>{description.split(' ').slice(0, 16).join(' ')}...</Card.Text>
           <Details channel={channel} published={published} />
           <Button href={urlNews} target="_blank" style={btn}>
             Read more →
