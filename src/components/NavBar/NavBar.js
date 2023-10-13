@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { IoCloseCircleSharp } from 'react-icons/io5'
 import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -53,11 +54,25 @@ function NavBar() {
           <img src={logoImage} alt="Logo" style={logo} />
           {navbarBrand}
         </Navbar.Brand>
-        <Navbar.Toggle
-          className="border-0"
-          aria-controls="basic-navbar-nav"
-          onClick={() => setIsCollapsed(!isCollapsed)}
-        />
+        {isCollapsed && (
+          <Navbar.Toggle
+            className="border-0"
+            aria-controls="basic-navbar-nav"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          />
+        )}
+
+        {!isCollapsed && (
+          <IoCloseCircleSharp
+            size={34}
+            style={{
+              "color": "whitesmoke",
+              "cursor": "pointer",
+              "marginInlineEnd": "10px"
+            }}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          />
+        )}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={nav} className="mr-auto" onClick={handleNavClick}>
             {navs.map((navItem) => (
