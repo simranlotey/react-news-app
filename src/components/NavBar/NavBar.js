@@ -66,7 +66,7 @@ function NavBar() {
           <IoCloseCircleSharp
             size={34}
             style={{
-              "color": "whitesmoke",
+              "color": "#6c757d",
               "cursor": "pointer",
               "marginInlineEnd": "10px"
             }}
