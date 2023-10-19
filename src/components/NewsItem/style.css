@@ -2,3 +2,6 @@
     transform: scale(1.05);
     transition: transform 300ms ease;
 }
+.card{
+    transition: transform 300ms ease;
+}
