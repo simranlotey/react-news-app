@@ -2,7 +2,6 @@ export const card = {
   borderRadius: "15px",
   backgroundColor: "rgb(41, 47, 51)",
   color: "#fff",
-  boxShadow: "rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px",
  };
 
 export const img = {

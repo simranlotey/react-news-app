@@ -83,7 +83,7 @@ function NavBar() {
               type="text"
               placeholder="Explore news..."
               style={formInput}
-              className="form-control-lg bg-dark p-2 mt-lg-2 mt-md-2 mt-sm-2 mt-xl-0 text-white shadow-sm border-dark"
+              className="form-control-lg bg-dark mt-lg-2 mt-md-2 mt-sm-2 mt-xl-0 text-white shadow-sm border-dark"
               value={searchQuery}
               onChange={handleInputChange}
             />
