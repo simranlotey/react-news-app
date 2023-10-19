@@ -1,4 +1,5 @@
 export const card = {
+  height: '100%',
   borderRadius: "15px",
   backgroundColor: "rgb(41, 47, 51)",
   color: "#fff",
@@ -8,6 +9,10 @@ export const card = {
 export const img = {
   borderTopLeftRadius: "15px",
   borderTopRightRadius: "15px",
+  backgroundColor: "#b6b4b4",
+  objectFit: 'cover',
+  width: '100%',
+  height: '230px',
 };
 
 export const btn = {
