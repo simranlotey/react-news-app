@@ -13,6 +13,12 @@ export const nav = {
   marginLeft: "5px",
 };
 
+export const closeBtn = {
+  color: "#ffffff80",
+  cursor: "pointer",
+  marginInlineEnd: "6px",
+};
+
 export const searchForm = {
   display: "flex",
   alignItem: "center",
@@ -24,8 +30,8 @@ export const formInput = {
 };
 
 export const logo = {
-  width: "45px"
-}
+  width: "45px",
+};
 
 export const btnColor = {
   backgroundColor: "#005abb",

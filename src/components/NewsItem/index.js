@@ -1,5 +1,4 @@
 export const card = {
-  height: '100%',
   borderRadius: "15px",
   backgroundColor: "rgb(41, 47, 51)",
   color: "#fff",
