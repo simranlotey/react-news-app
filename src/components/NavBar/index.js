@@ -7,6 +7,7 @@ export const navBar = {
 export const navBrand = {
   fontSize: "23px",
   marginLeft: "10px",
+  fontWeight: "700"
 };
 
 export const nav = {
@@ -26,6 +27,7 @@ export const searchForm = {
 
 export const formInput = {
   borderRadius: "6px",
+  padding: "11px",
   marginLeft: "13px",
 };
 
@@ -36,7 +38,7 @@ export const logo = {
 export const btnColor = {
   backgroundColor: "#005abb",
   color: "white",
-  fontWeight: "bold",
+  fontWeight: "700",
   borderRadius: "6px",
   padding: "8px 15px",
   borderColor: "#323762b7",

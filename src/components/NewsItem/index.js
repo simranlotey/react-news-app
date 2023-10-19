@@ -8,7 +8,6 @@ export const card = {
 export const img = {
   borderTopLeftRadius: "15px",
   borderTopRightRadius: "15px",
-  backgroundColor: "#b6b4b4",
   objectFit: 'cover',
   width: '100%',
   height: '230px',
