@@ -6,16 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { navbarBrand, navs } from "../../config/config";
 import logoImage from "../Images/logoImage.png";
-import {
-  btnColor,
-  formInput,
-  logo,
-  nav,
-  navBar,
-  navBrand,
-  closeBtn,
-  searchForm,
-} from "./index";
+import { btnColor, formInput, logo, nav, navBar, navBrand, closeBtn, searchForm } from "./index";
 
 function NavBar() {
   const navigate = useNavigate();
