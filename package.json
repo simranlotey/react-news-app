@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
     "axios": "^0.26.1",
     "bootstrap": "^4.6.0",
     "moment": "^2.29.4",
@@ -19,8 +16,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.3",
-    "uuid": "^8.3.2",
-    "web-vitals": "^3.4.0"
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

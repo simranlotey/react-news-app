@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { navbarBrand, navs } from "../../config/config";
 import logoImage from "../Images/logoImage.png";
-import { btnColor, formInput, logo, nav, navBar, navBrand, closeBtn, searchForm } from "./index";
+import "../NavBar/NavBar.css";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -36,14 +36,14 @@ function NavBar() {
     <>
       <Navbar
         ref={navRef}
-        style={navBar}
+        className="navbar"
         variant="dark"
         expand="lg"
         fixed="top"
         expanded={!isCollapsed}
       >
-        <Navbar.Brand style={navBrand} href="/">
-          <img src={logoImage} alt="Logo" style={logo} />
+        <Navbar.Brand className="nav-brand" href="/">
+          <img src={logoImage} alt="Logo" className="logo" />
           {navbarBrand}
         </Navbar.Brand>
         {isCollapsed && (
@@ -57,30 +57,28 @@ function NavBar() {
         {!isCollapsed && (
           <IoCloseOutline
             size={40}
-            style={closeBtn}
+            className="close-btn"
             onClick={() => setIsCollapsed(!isCollapsed)}
           />
         )}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav style={nav} className="mr-auto" onClick={handleNavClick}>
+          <Nav className="nav mr-auto" onClick={handleNavClick}>
             {navs.map((navItem) => (
               <LinkContainer to={navItem.page} key={uuidv4()}>
-                <Nav.Link className="ml-2">{navItem.nav}</Nav.Link>
+                <Nav.Link className="nav-item">{navItem.nav}</Nav.Link>
               </LinkContainer>
             ))}
           </Nav>
-          <Form style={searchForm} onSubmit={handleSubmit}>
+          <Form className="search-form" onSubmit={handleSubmit}>
             <FormControl
               type="text"
               placeholder="Explore news..."
-              style={formInput}
-              className="form-control-lg bg-dark mt-lg-2 mt-md-2 mt-sm-2 mt-xl-0 text-white shadow-sm border-dark"
+              className="form-input form-control-lg mt-lg-2 mt-md-2 mt-sm-2 mt-xl-0"
               value={searchQuery}
               onChange={handleInputChange}
             />
             <Button
-              className="btn custom-btn mt-lg-2 ml-2 mt-md-2 mt-sm-2 mt-xl-0 shadow-sm"
-              style={btnColor}
+              className="search-btn mt-lg-2 ml-2 mt-md-2 mt-sm-2 mt-xl-0"
               onClick={handleSubmit}
               disabled={isSearchButtonDisabled}
             >
